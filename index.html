@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Special Me — женская одежда, Ташкент</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2732%27 fill=%27%231b1714%27/%3E%3Ctext x=%2732%27 y=%2742%27 font-family=%27Georgia%27 font-size=%2730%27 fill=%27%23ece7e1%27 text-anchor=%27middle%27%3ESM%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Special Me — женская одежда в Ташкенте. Новая коллекция почти каждый день, два магазина: Minor и Efendi, 10:00–20:00.">
+<meta name="theme-color" content="#E7E4DF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Onest:wght@400;500;600&display=swap&subset=cyrillic,latin-ext" rel="stylesheet">
+<link rel="preload" as="image" href="media/vp/DfUheYot1Cn_5.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#feed" data-i="skip">К новинкам</a>
+
+<header class="top" id="top">
+  <a class="brand" href="#top" aria-label="Special Me">Special&nbsp;Me</a>
+  <nav class="nav" aria-label="Разделы">
+    <a href="#rail" data-i="navRail">Вешалка</a>
+    <a href="#feed" data-i="navFeed">Новинки</a>
+    <a href="#stores" data-i="navStores">Магазины</a>
+  </nav>
+  <div class="top-r">
+    <span class="status" id="topStatus" aria-live="polite"></span>
+    <div class="lang" role="group" aria-label="Язык / Til">
+      <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+      <button type="button" data-lang="uz" aria-pressed="false">UZ</button>
+    </div>
+    <button class="bag-btn" type="button" id="bagBtn" aria-haspopup="dialog">
+      <span data-i="bag">Примерка</span><b id="bagCount">0</b>
+    </button>
+  </div>
+</header>
+
+<main>
+<!-- HERO: the mirror -->
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-copy">
+    <p class="kicker" data-i="kicker">Женская одежда, Ташкент</p>
+    <h1 id="h1" data-i="h1">Новая коллекция приходит почти каждый день</h1>
+    <p class="lede" data-i="lede">Смотрите образы, выбирайте размер и магазин — и напишите нам, чтобы уточнить наличие или отложить вещь на примерку.</p>
+    <div class="cta">
+      <a class="btn btn-ink" href="#feed" data-i="ctaFeed">Смотреть новинки</a>
+      <a class="btn btn-line" href="#stores" data-i="ctaStores">Выбрать магазин</a>
+    </div>
+    <ul class="hero-stores" id="heroStores"></ul>
+  </div>
+
+  <div class="mirror-wrap">
+    <div class="mirror" id="mirror">
+      <div class="mirror-dom" id="mirrorDom">
+        <video id="mirrorVideo" muted playsinline preload="none" poster="media/vp/DfUheYot1Cn_5.jpg"></video>
+      </div>
+      <canvas class="mirror-gl" id="mirrorGl" aria-hidden="true"></canvas>
+    </div>
+    <div class="mirror-shadow" aria-hidden="true"></div>
+    <div class="mirror-bar">
+      <p class="mirror-cap" id="mirrorCap" aria-live="polite"></p>
+      <button class="btn btn-ink btn-sm" type="button" id="mirrorAsk" data-i="ask">Уточнить размер и наличие</button>
+    </div>
+  </div>
+
+  <div class="reels" id="reels" role="tablist" aria-label="Рилсы"></div>
+</section>
+
+<!-- RAIL: 3D garment rail -->
+<section class="rail" id="rail" aria-labelledby="railH">
+  <div class="rail-stage" id="railStage">
+    <div class="rail-head">
+      <h2 id="railH" data-i="railH">Вешалка недели</h2>
+      <p data-i="railP">Листайте — вешалка поворачивается. Нажмите на вещь, чтобы выбрать размер и магазин.</p>
+    </div>
+    <canvas class="rail-gl" id="railGl" aria-hidden="true"></canvas>
+    <div class="rail-foot">
+      <p class="rail-cap" id="railCap" aria-live="polite"></p>
+      <button class="btn btn-ink btn-sm" type="button" id="railAsk" data-i="ask">Уточнить размер и наличие</button>
+    </div>
+    <div class="rail-list" id="railList"></div>
+  </div>
+</section>
+
+<!-- FEED -->
+<section class="feed" id="feed" aria-labelledby="feedH">
+  <div class="feed-head">
+    <h2 id="feedH" data-i="feedH">Новинки по дням</h2>
+    <p data-i="feedP">Всё, что появилось в Instagram за последние недели. Наличие и размеры меняются быстро — уточняйте в магазине.</p>
+    <div class="filters" role="group" aria-label="Фильтр">
+      <button type="button" class="chip" data-filter="all" aria-pressed="true" data-i="fAll">Все</button>
+      <button type="button" class="chip" data-filter="reel" aria-pressed="false" data-i="fReel">С видео</button>
+      <button type="button" class="chip" data-filter="sizes" aria-pressed="false" data-i="fSizes">Размеры указаны</button>
+    </div>
+  </div>
+  <div class="days" id="days"></div>
+  <div class="more"><button class="btn btn-line" type="button" id="moreBtn" data-i="more">Показать ещё</button></div>
+</section>
+
+<!-- STORES -->
+<section class="stores" id="stores" aria-labelledby="storesH">
+  <div class="stores-head">
+    <h2 id="storesH" data-i="storesH">Два магазина, одни часы</h2>
+    <p data-i="storesP">Оба магазина работают с 10:00 до 20:00. Выберите удобный — он подставится в ваше сообщение.</p>
+  </div>
+  <div class="store-grid" id="storeGrid"></div>
+</section>
+
+<section class="news" aria-labelledby="newsH">
+  <figure class="news-img"><img src="media/p/Ddvic4sDW5I_1.jpg" alt="" loading="lazy" width="1080" height="1440"></figure>
+  <div class="news-copy">
+    <h2 id="newsH" data-i="newsH">Новинки — сначала в Telegram и Instagram</h2>
+    <p data-i="newsP">Новые вещи появляются почти каждый день. Подпишитесь, чтобы видеть их первыми, или напишите в Direct.</p>
+    <div class="cta">
+      <a class="btn btn-ink" href="https://t.me/joinchat/QcfK1xF6C5TyHZl8" target="_blank" rel="noopener" data-i="tgGroup">Telegram-группа</a>
+      <a class="btn btn-line" href="https://ig.me/m/special_me_uz" target="_blank" rel="noopener" data-i="direct">Написать в Direct</a>
+      <a class="btn btn-line" href="https://www.instagram.com/special_me_uz/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <span class="brand">Special&nbsp;Me</span>
+  <span data-i="footHours">Магазины открыты с 10:00 до 20:00</span>
+  <span class="concept" data-i="concept">Концепт сайта · Lumagen</span>
+</footer>
+
+<!-- item / fitting dialog -->
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden>
+  <div class="sheet-bg" data-close></div>
+  <div class="sheet-panel" id="sheetPanel">
+    <button class="x" type="button" data-close aria-label="Закрыть">×</button>
+    <div class="sheet-media" id="sheetMedia"></div>
+    <div class="sheet-body">
+      <p class="sheet-date" id="sheetDate"></p>
+      <h3 id="sheetTitle"></h3>
+      <p class="sheet-meta" id="sheetMeta"></p>
+      <div id="sheetItems"></div>
+      <fieldset class="field">
+        <legend data-i="fStore">Магазин</legend>
+        <div class="store-pick" id="storePick"></div>
+      </fieldset>
+      <fieldset class="field">
+        <legend data-i="fIntent">Что нужно</legend>
+        <div class="seg" id="intentPick"></div>
+      </fieldset>
+      <fieldset class="field" id="whenField">
+        <legend data-i="fWhen">Когда удобно прийти</legend>
+        <div class="seg" id="whenPick"></div>
+      </fieldset>
+      <label class="field msg">
+        <span data-i="fMsg">Сообщение</span>
+        <textarea id="msg" rows="7"></textarea>
+      </label>
+      <div class="actions">
+        <a class="btn btn-ink" id="aCall" href="#"></a>
+        <button class="btn btn-line" type="button" id="aTg" data-i="aTg">Telegram</button>
+        <button class="btn btn-line" type="button" id="aDm" data-i="aDm">Instagram Direct</button>
+        <button class="btn btn-line" type="button" id="aCopy" data-i="aCopy">Скопировать текст</button>
+      </div>
+      <button class="btn btn-ghost" type="button" id="aBag"></button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
